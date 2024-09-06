@@ -6,7 +6,7 @@ from werkzeug.utils import secure_filename
 from get_file import extract_pdf_text 
 
 # Initialize the Gemini API
-api_key = "AIzaSyCcsbHYw327pZ9s5xtxqb3ZH-eWwpLzGG8"
+api_key = "your_api_key"
 genai.configure(api_key=api_key)
 model_pro = genai.GenerativeModel(model_name="gemini-1.5-pro")
 
