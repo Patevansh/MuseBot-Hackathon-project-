@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booked Tickets</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #FF6F00;
+            /* Orange theme for header background */
+            color: #F9FAFB;
+            /* Light text color for header */
+        }
+
+        td {
+            background-color: #1F2937;
+            /* Dark gray for rows */
+            color: #D1D5DB;
+            /* Light gray text color */
+        }
+
+        table tr:nth-child(even) {
+            background-color: #374151;
+            /* Slightly lighter gray for alternating rows */
+        }
+
+        table tr:hover {
+            background-color: #4B5563;
+            /* Highlight color on hover */
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-300 flex items-center justify-center min-h-screen">
+    <div class="container mx-auto p-6 bg-gray-800 rounded-lg shadow-lg w-full max-w-4xl">
+        <h1 class="text-3xl font-bold mb-6 text-center text-pink-500">Booked Tickets</h1>
+        <table class="min-w-full bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
+            <thead class="bg-pink-500 text-white">
+                <tr>
+                    <th class="py-3 px-4 text-left text-sm font-semibold">Location</th>
+                    <th class="py-3 px-4 text-left text-sm font-semibold">Username</th>
+                    <th class="py-3 px-4 text-left text-sm font-semibold">Tickets Booked</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ticket in tickets %}
+                <tr class="hover:bg-gray-700">
+                    <td class="py-2 px-4 border-b border-gray-700">{{ ticket.location }}</td>
+                    <td class="py-2 px-4 border-b border-gray-700">{{ ticket.username }}</td>
+                    <td class="py-2 px-4 border-b border-gray-700">{{ ticket.tickets_booked }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+CREATE DATABASE your_database_name;
+
+USE your_database_name;
+
+CREATE TABLE tickets (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    location VARCHAR(255) NOT NULL,
+    pdf_path VARCHAR(255) NOT NULL,
+    tickets_available INT NOT NULL
+);
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE bookings (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50),
+    location VARCHAR(100),
+    tickets_booked INT,
+    FOREIGN KEY (username) REFERENCES users(username)
+);

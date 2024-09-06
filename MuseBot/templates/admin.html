@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-900 text-gray-300 flex items-center justify-center min-h-screen">
+    <div class="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-lg">
+        <h2 class="text-2xl font-bold mb-6 text-center text-pink-500">Admin Panel</h2>
+        <form method="POST" enctype="multipart/form-data" class="space-y-4">
+            <div>
+                <label for="location" class="block text-sm font-medium text-gray-400">Location:</label>
+                <input type="text" id="location" name="location" required
+                    class="mt-1 block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-pink-500 focus:border-pink-500 sm:text-sm">
+            </div>
+
+            <div>
+                <label for="tickets_available" class="block text-sm font-medium text-gray-400">Tickets Available:</label>
+                <input type="number" id="tickets_available" name="tickets_available" required
+                    class="mt-1 block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-pink-500 focus:border-pink-500 sm:text-sm">
+            </div>
+
+            <div>
+                <label for="price" class="block text-sm font-medium text-gray-400">Ticket Price:</label>
+                <input type="number" id="price" name="price" step="0.01" required
+                    class="mt-1 block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-pink-500 focus:border-pink-500 sm:text-sm">
+            </div>
+
+            <div>
+                <label for="pdf" class="block text-sm font-medium text-gray-400">Upload File:</label>
+                <input type="file" id="pdf" name="pdf"
+                    class="mt-1 block w-full text-gray-300 bg-gray-700 border border-gray-600 rounded-md py-2 px-3 focus:outline-none focus:ring-pink-500 focus:border-pink-500 sm:text-sm">
+            </div>
+
+            <div>
+                <button type="submit"
+                    class="w-full py-2 px-4 bg-pink-600 text-white font-semibold rounded-md shadow-sm hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500">
+                    Add Location
+                </button>
+            </div>
+        </form>
+        <div class="mt-4 text-center">
+            <a href="{{ url_for('logout') }}" class="text-pink-500">Logout</a>
+        </div>
+    </div>
+</body>
+
+</html>
